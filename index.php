@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Our Team's Website</title>
+        <title>PHP Test</title>
     </head>
     <body>
         <?php ech '<p>Hello World</p>'; ?>
