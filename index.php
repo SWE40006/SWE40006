@@ -4,6 +4,6 @@
         <title>Our Team's Website</title>
     </head>
     <body>
-        <?php echo '<p>Hello World</p>'; ?>
+        <?php ech '<p>Hello World</p>'; ?>
     </body>
 </html>
