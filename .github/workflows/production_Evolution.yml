@@ -1,0 +1,40 @@
+name: Build and deploy PHP app to Azure Web App - SoftwareEvolution
+
+on:
+  push:
+    branches:
+      - production
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: List repository contents before deployment
+        run: ls -al
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Check syntax of index.php
+        run: php -l index.php
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+     
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'Evolution'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F769B6D654F74CB883B5661A80EB3B83 }}
+          package: .
