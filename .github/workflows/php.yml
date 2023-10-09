@@ -1,0 +1,45 @@
+name: PHP Composer Validation and Build
+
+on:
+  push:
+    branches: [ "production" ]
+  pull_request:
+    branches: [ "production" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v3
+      with:
+        php-version: '8.0' # or your preferred version
+
+    - name: Check syntax of PHP Composer file
+      run: php -l "PHP Composer.php"
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate --strict
+
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+
+    # If you have a test suite or want to run the PHP Composer file:
+    # - name: Run PHP Composer
+    #   run: php "PHP Composer.php"
