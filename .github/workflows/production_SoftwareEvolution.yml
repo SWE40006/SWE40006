@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: List repository contents before deployment
+        run: ls -al
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -27,8 +29,7 @@ jobs:
     needs: build
 
     steps:
-      - name: List repository contents before deployment
-        run: ls -al
+     
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
