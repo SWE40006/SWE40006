@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Evolution Animation</title>
     <style>
         body {
@@ -52,7 +53,7 @@
         }
 
         .arm {
-            animation-delay: 0.25s;
+            animation-delay: 1.5s;
         }
 
         @keyframes swing {
@@ -65,7 +66,9 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-dark p-5">
+    <h1 class="text-white">The Evolution of Software</h1>
+    <p>By Stefan , Joe, Tevy, Wei and Mikkel</p>
     <div class="container text-center evolution-container">
         <!-- Monkey -->
         <div class="evolution-stage monkey">
