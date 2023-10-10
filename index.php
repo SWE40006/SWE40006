@@ -57,7 +57,7 @@
         }
 
         .right-leg, .right-arm {
-            animation-delay: 0.25s;
+            animation-delay: 2.25s;
         }
 
         @keyframes swing {
