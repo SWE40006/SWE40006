@@ -52,7 +52,7 @@
         .leg, .arm {
             fill: none;
             stroke-width: 3;
-            animation: swing 0.5s infinite;
+            animation: swing 2.5s infinite;
             transform-origin: top;
         }
 
