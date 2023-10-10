@@ -51,7 +51,7 @@
 
         .leg, .arm {
             fill: none;
-            stroke: currentColor;
+            stroke: tan;
             stroke-width: 3;
             animation: swing 0.5s infinite;
         }
@@ -80,7 +80,7 @@
         <div class="evolution-stage monkey">
             <svg width="50" height="100">
                 <circle cx="25" cy="25" r="20" fill="brown" /> <!-- Monkey head -->
-                <line x1="10" y1="50" x2="10" y2="80" class="leg" stroke="brown" />
+                <line x1="10" y1="50" x2="10" y2="80" class="leg" stroke="white" />
                 <line x1="40" y1="50" x2="40" y2="80" class="leg" stroke="brown" />
                 <line x1="10" y1="40" x2="5" y2="60" class="arm" stroke="brown" />
                 <line x1="40" y1="40" x2="45" y2="60" class="arm" stroke="brown" />
