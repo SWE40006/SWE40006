@@ -3,64 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dyson Sphere Rotation</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Evolution Animation</title>
     <style>
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #000;
+            background-color: #eee;
         }
 
-        .dyson-sphere {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 10px dotted #FFF; /* Representing the solar panels or structures of the Dyson sphere */
-            animation: rotateDyson 10s infinite linear;
-            position: relative;
+        .evolution-container {
+            display: flex;
+            align-items: center;
         }
 
-        /* Sample representation of solar panels/structures of the Dyson sphere using pseudo-elements */
-        .dyson-sphere::before,
-        .dyson-sphere::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 60%;
-            height: 10px;
-            background-color: #FFF;
-            border-radius: 10px;
+        .evolution-stage {
+            margin: 0 15px;
+            opacity: 0.5;
+            animation: fadeStage 10s infinite;
         }
 
-        .dyson-sphere::before {
-            transform: translate(-50%, -50%) rotate(45deg);
+        .hominid {
+            animation-delay: 3s;
         }
 
-        .dyson-sphere::after {
-            transform: translate(-50%, -50%) rotate(-45deg);
+        .human {
+            animation-delay: 6s;
         }
 
-        @keyframes rotateDyson {
-            0% {
-                transform: rotate(0deg);
+        @keyframes fadeStage {
+            0%, 100% {
+                opacity: 0.5;
             }
-            100% {
-                transform: rotate(360deg);
+            50% {
+                opacity: 1;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container text-center">
-        <div class="dyson-sphere mx-auto mb-3"></div>
-        <p class="text-white">Hello, Me Dyson Sphere</p>
-    </div>
+    <div class="container text-center evolution-container">
+        <div class="evolution-stage monkey">
+            <svg width="50" height="100">
+                <circle cx="25" cy="25" r="20" fill="brown" /> <!-- Monkey head -->
+                <!-- Add more SVG elements to represent monkey body if needed -->
+            </svg>
+        </div>
 
-    <!-- Optional JavaScript and Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="evolution-stage hominid">
+            <svg width="50" height="150">
+                <circle cx="25" cy="25" r="20" fill="tan" /> <!-- Hominid head -->
+                <rect x="10" y="50" width="30" height="80" fill="tan" /> <!-- Hominid body -->
+            </svg>
+        </div>
+
+        <div class="evolution-stage human">
+            <svg width="50" height="200">
+                <circle cx="25" cy="25" r="20" fill="peachpuff" /> <!-- Human head -->
+                <rect x="10" y="50" width="30" height="140" fill="peachpuff" /> <!-- Human body -->
+            </svg>
+        </div>
+    </div>
 </body>
 </html>
