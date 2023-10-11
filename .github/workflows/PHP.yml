@@ -31,8 +31,9 @@ jobs:
       - name: Fetch production branch
         run: git fetch origin production
 
-      - name: Merge main into production
-        run: |
-          git checkout production
-          git merge main
-          git push origin production
+      - name: Rebase production on top of main
+        run: | 
+         git checkout production
+         git rebase main
+         git push origin production --force-with-lease
+
