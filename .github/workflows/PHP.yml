@@ -1,24 +1,53 @@
-- name: Checkout main branch
-  uses: actions/checkout@v2
-  with:
-    ref: main
+name: Merger
 
-- name: Sync with production branch
-  run: |
-    git fetch origin production
-    git merge production
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
-- name: Only keep PHP files and remove others
-  run: |
-    find . -type f ! -name '*.php' -delete
-    git add -A
-    git commit -m "Keep only PHP files"
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-- name: Push changes to main
-  run: git push origin main
+    steps:
+      - uses: actions/checkout@v2
 
-- name: Merge main into production
-  run: |
-    git checkout production
-    git merge main
-    git push origin production
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Check syntax of index.php
+        run: php -l index.php
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+          name: php-app
+          path: .
+
+      - name: Checkout main branch
+        uses: actions/checkout@v2
+        with:
+          ref: main
+
+      - name: Sync with production branch
+        run: |
+          git fetch origin production
+          git merge production
+
+      - name: Only keep PHP files and remove others
+        run: |
+          find . -type f ! -name '*.php' -delete
+          git add -A
+          git commit -m "Keep only PHP files"
+
+      - name: Push changes to main
+        run: git push origin main
+
+      - name: Merge main into production
+        run: |
+          git checkout production
+          git merge main
+          git push origin production
