@@ -28,8 +28,11 @@ jobs:
           name: php-app
           path: .
 
+      - name: Fetch production branch
+        run: git fetch origin production
+
       - name: Merge main into production
         run: |
           git checkout production
           git merge main
-          git push 
+          git push origin production
