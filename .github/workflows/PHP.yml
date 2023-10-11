@@ -29,7 +29,7 @@ jobs:
           path: .
 
       - name: Push changes to main
-        run: git push origin main
+        run: git push main
 
       - name: Fetch production branch
         run: git fetch origin production
