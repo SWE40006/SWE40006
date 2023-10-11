@@ -32,10 +32,7 @@ jobs:
         with:
           ref: main
 
-      - name: Sync with production branch
-        run: |
-          git fetch production
-          git merge production
+    
 
       - name: Only keep PHP files and remove others
         run: |
