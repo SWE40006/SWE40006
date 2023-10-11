@@ -13,3 +13,7 @@ print(output)
 # Commit changes
 output = subprocess.check_output(['git', 'commit', '-m', commit_message]).decode()
 print(output)
+
+# Commit changes
+output = subprocess.check_output(['git', 'push']).decode()
+print(output)
