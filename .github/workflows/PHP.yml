@@ -30,7 +30,10 @@ jobs:
 
       - name: Fetch production branch
         run: git fetch origin production
-
+      - name: Set Git user
+        run: |
+         git config user.email "actions@github.com"
+         git config user.name "GitHub Actions"
       - name: Rebase production on top of main
         run: | 
          git checkout production
