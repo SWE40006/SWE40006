@@ -34,7 +34,7 @@ jobs:
 
       - name: Sync with production branch
         run: |
-          git fetch origin production
+          git fetch origin/production
           git merge production
 
       - name: Only keep PHP files and remove others
