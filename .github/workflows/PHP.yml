@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -27,21 +28,11 @@ jobs:
           name: php-app
           path: .
 
-      - name: Checkout main branch
-        uses: actions/checkout@v2
-        with:
-          ref: main
-
-    
-
-      - name: Only keep PHP files and remove others
-        run: |
-          find . -type f ! -name '*.php' -delete
-          git add -A
-          git commit -m "Keep only PHP files"
-
       - name: Push changes to main
         run: git push origin main
+
+      - name: Fetch production branch
+        run: git fetch origin production
 
       - name: Merge main into production
         run: |
