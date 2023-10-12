@@ -22,24 +22,4 @@ jobs:
       - name: Check syntax of index.php
         run: php -l index.php
 
-  push-to-production:
-    runs-on: ubuntu-latest
-    needs: validate
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set Git user
-        run: |
-          git config user.email "actions@github.com"
-          git config user.name "GitHub Actions"
-
-      - name: Force Push main to production
-        run: |
-         # Step 1: Fetch the latest changes from the remote repository
-         git fetch origin
-         git checkout production
-         git merge main --allow-unrelated-histories
-         git push origin production
 
