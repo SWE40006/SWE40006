@@ -23,7 +23,7 @@ print(output)
 
 output = subprocess.check_output(['git', 'pull']).decode()
 print(output)
-choice = str(input("Would you like to push it to the main or the production branch :  Y/N "))
+choice = str(input("Would you like to push it to the main or the production branch :  production/main "))
 # Commit changes
 if (choice == "main"):
   print("######################### Your GitHub is now pushing to the main. There might be merge conflicts and errors that could fail the tests so make sure you are ready to handle them or revert back #########################")
