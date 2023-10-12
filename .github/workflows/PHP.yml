@@ -37,6 +37,9 @@ jobs:
 
       - name: Force Push main to production
         run: |
+         # Step 1: Fetch the latest changes from the remote repository
          git fetch origin
-         git rebase origin/production -X theirs
+         git checkout production
+         git merge main
          git push origin production
+
