@@ -30,8 +30,10 @@ jobs:
       - name: Revert changes if build fails
         if: failure()  # This step will run only if any of the previous steps fails
         run: |
-          git reset --hard HEAD~1
-          git push origin production --force
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git revert --no-edit HEAD
+          git push
 
   deploy:
     runs-on: ubuntu-latest
