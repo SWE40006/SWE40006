@@ -36,10 +36,11 @@ jobs:
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
 
-      - name: Force overwrite production with main
+      - name: Merge main into production without credentials
         run: |
-         git checkout main
-         git push https://${{ secrets.MY_GITHUB_TOKEN }}@github.com/StefanKumarasinghe/SWE40006.git main:production --force
-
+          git fetch origin
+          git checkout production
+          git merge main --allow-unrelated-histories --no-edit
+          git push origin production
 
 
