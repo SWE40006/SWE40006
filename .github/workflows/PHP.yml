@@ -40,6 +40,6 @@ jobs:
         run: |
           git checkout production
           git merge main --allow-unrelated-histories -X theirs
-          git push https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/StefanKumarasinghe/SWE40006/production
+          git push https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/StefanKumarasinghe/SWE40006.git production
 
 
