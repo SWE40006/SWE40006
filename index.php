@@ -87,6 +87,9 @@
                 <line x1="40" y1="40" x2="45" y2="60" class="arm right-arm" stroke="brown" />
             </svg>
         </div>
+        <?php
+        echo
+        ?>
 
         <!-- Hominid -->
         <div class="evolution-stage hominid">

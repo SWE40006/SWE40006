@@ -13,7 +13,7 @@ commit_message += " - " + auth
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Add all changes
 print("######################### You are retrieving the latest resources #########################")
-output = subprocess.check_output(['git', 'checkout', 'main']).decode()
+output = subprocess.check_output(['git', 'checkout', 'production']).decode()
 output = subprocess.check_output(['git', 'pull']).decode()
 print(output)
 # Add all changes
