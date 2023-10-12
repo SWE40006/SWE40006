@@ -17,7 +17,6 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
-
       - name: Check syntax of index.php
         run: php -l index.php
    
@@ -26,15 +25,10 @@ jobs:
         with:
           name: php-app
           path: .
+<<<<<<< HEAD
 
-      - name: Revert changes if build fails
-        if: failure()  # This step will run only if any of the previous steps fails
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git revert --no-edit HEAD
-          git push
-
+=======
+>>>>>>> parent of ca9ed85 (Merge pull request #17 from StefanKumarasinghe/production)
   deploy:
     runs-on: ubuntu-latest
     needs: build
