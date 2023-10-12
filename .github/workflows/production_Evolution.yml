@@ -30,6 +30,7 @@ jobs:
       - name: Push to main branch if build fails
         if: failure()  # This step only runs if the previous build step failed
         run: |
+         git fetch origin
          git checkout main
          git merge production --allow-unrelated-histories --no-commit
          git push origin main --force
