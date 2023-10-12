@@ -34,7 +34,6 @@ jobs:
          git checkout main
          git config user.name "GitHub Actions"
          git config user.email "actions@github.com"
-         git merge production --allow-unrelated-histories --no-commit
          git push origin main --force
   deploy:
     runs-on: ubuntu-latest
