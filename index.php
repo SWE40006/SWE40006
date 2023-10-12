@@ -70,7 +70,7 @@
         }
     </style>
 </head>
-
+<?php
 <body class="bg-dark p-5">
     <div>
         <h1 class="text-white">The Evolution of Software</h1>
@@ -87,9 +87,7 @@
                 <line x1="40" y1="40" x2="45" y2="60" class="arm right-arm" stroke="brown" />
             </svg>
         </div>
-        <?php
-        echo
-        ?>
+    
 
         <!-- Hominid -->
         <div class="evolution-stage hominid">
