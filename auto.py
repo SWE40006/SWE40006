@@ -14,6 +14,15 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Add all changes
 print("######################### You are retrieving the latest resources #########################")
 # Add all changes
+choice = str(input("Would you like to fetch from it main or the production branch :  production/main "))
+# Commit changes
+if (choice == "main"):
+  print("######################### Your GitHub is now pushing to the main. There might be merge conflicts and errors that could fail the tests so make sure you are ready to handle them or revert back #########################")
+  output = subprocess.check_output(['git', 'checkout', 'main']).decode()
+  print(output)
+elif ((choice).lower()=="production") :
+   output = subprocess.check_output(['git', 'checkout', 'production']).decode()
+   print(output)
 output = subprocess.check_output(['git', 'checkout', 'production']).decode()
 output = subprocess.check_output(['git', 'add', '.']).decode()
 print(output)
@@ -26,6 +35,7 @@ print(output)
 choice = str(input("Would you like to push it to the main or the production branch :  production/main "))
 # Commit changes
 if (choice == "main"):
+  output = subprocess.check_output(['git', 'checkout', 'main']).decode()
   print("######################### Your GitHub is now pushing to the main. There might be merge conflicts and errors that could fail the tests so make sure you are ready to handle them or revert back #########################")
   output = subprocess.check_output(['git', 'push']).decode()
   print(output)
