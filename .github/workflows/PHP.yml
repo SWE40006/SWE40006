@@ -40,6 +40,6 @@ jobs:
          # Step 1: Fetch the latest changes from the remote repository
          git fetch origin
          git checkout production
-         git merge main
+         git merge main --allow-unrelated-histories
          git push origin production
 
