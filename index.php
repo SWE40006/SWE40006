@@ -72,7 +72,7 @@
 </head>
 <body class="bg-dark p-5">
     <div>
-        <?php
+       
         <h1 class="text-white">The Evolution of Software</h1>
         <p class="text-white">By  Joe, Tevy, Wei, Mikkels</p>
     </div>
