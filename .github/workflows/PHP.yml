@@ -37,4 +37,4 @@ jobs:
 
       - name: Force Push main to production
         run: |
-          git push https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/StefanKumarasinghe/SWE40006.git HEAD:production --force
+          git push https://x-access-token:${{ secrets.PERSONAL_TOKEN }}@github.com/StefanKumarasinghe/SWE40006.git HEAD:production
