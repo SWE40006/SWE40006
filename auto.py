@@ -14,6 +14,11 @@ os.chdir(os.path.dirname(os.path.realpath(__file__)))
 # Add all changes
 print("######################### You are retrieving the latest resources #########################")
 output = subprocess.check_output(['git', 'checkout', 'production']).decode()
+# Add all changes
+output = subprocess.check_output(['git', 'add', '.']).decode()
+print(output)
+# Commit changes
+output = subprocess.check_output(['git', 'commit', '-m', commit_message]).decode()
 output = subprocess.check_output(['git', 'pull']).decode()
 print(output)
 # Add all changes
@@ -21,6 +26,7 @@ output = subprocess.check_output(['git', 'add', '.']).decode()
 print(output)
 # Commit changes
 output = subprocess.check_output(['git', 'commit', '-m', commit_message]).decode()
+
 print(output)
 choice = str(input("Would you like to push it to the main server, note the default branch is main, if you would like to change it type production :  Y/N "))
 # Commit changes
