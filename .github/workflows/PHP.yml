@@ -36,6 +36,6 @@ jobs:
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
 
-    - name: Force merge main into production
-      run: |
-        git push origin main:production --force
+      - name: Force merge main into production
+        run: |
+         git push origin main:production --force
