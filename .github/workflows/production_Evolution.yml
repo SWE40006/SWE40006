@@ -30,9 +30,17 @@ jobs:
       - name: Push to main branch if build fails
         if: failure()  # This step only runs if the previous build step failed
         run: |
+<<<<<<< HEAD
          git checkout main
          git merge production --allow-unrelated-histories --no-commit
          git push origin main --force
+=======
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git checkout main
+          git merge production --allow-unrelated-histories --no-commit
+          git push origin main
+>>>>>>> 2d46a3a287c960e7bcd2c58ac2f57c5ca53f67e3
 
   deploy:
     runs-on: ubuntu-latest
