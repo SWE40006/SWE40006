@@ -16,13 +16,9 @@ print("######################### You are retrieving the latest resources #######
 output = subprocess.check_output(['git', 'checkout', 'main']).decode()
 output = subprocess.check_output(['git', 'pull']).decode()
 print(output)
-
-
 # Add all changes
 output = subprocess.check_output(['git', 'add', '.']).decode()
 print(output)
-
-
 # Commit changes
 output = subprocess.check_output(['git', 'commit', '-m', commit_message]).decode()
 print(output)
