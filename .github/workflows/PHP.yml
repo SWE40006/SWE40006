@@ -38,8 +38,8 @@ jobs:
 
       - name: Force overwrite production with main
         run: |
-         git remote set-url origin https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/StefanKumarasinghe/SWE40006.git
          git checkout main
-         git push origin main:production --force
+         git push https://${{ secrets.MY_GITHUB_TOKEN }}@github.com/StefanKumarasinghe/SWE40006.git main:production --force
+
 
 
