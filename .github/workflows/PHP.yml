@@ -36,11 +36,8 @@ jobs:
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
 
-      - name: Merge main into production without credentials
+      - name: Merge main into production, favoring main on conflicts
         run: |
-          git fetch origin
           git checkout production
-          git merge main --allow-unrelated-histories --no-edit
+          git merge main -X theirs
           git push origin production
-
-
