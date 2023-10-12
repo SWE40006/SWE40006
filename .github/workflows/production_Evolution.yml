@@ -25,10 +25,8 @@ jobs:
         with:
           name: php-app
           path: .
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of ca9ed85 (Merge pull request #17 from StefanKumarasinghe/production)
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
