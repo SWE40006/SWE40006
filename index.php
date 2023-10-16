@@ -70,6 +70,7 @@
         }
     </style>
 </head>
+<?php echo
 <body class="bg-dark p-5">
     <div>
         <h1 class="text-white">The Evolution of Software...</h1>
