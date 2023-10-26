@@ -70,9 +70,12 @@
         }
     </style>
 </head>
+<?php 
+$date = new DateTime();
+?>
 <body class="bg-dark p-5">
     <div>
-        <h1 class="text-white">The SWE40006 Evolution of Software...</h1>
+        <h1 class="text-white"><?php echo($date); ?></h1>
         <p class="text-white">By Stefan, Joe, Tevy, Wei, Mikkel</p>
         <p>Testing</p>
     </div>
