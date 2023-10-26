@@ -70,11 +70,13 @@
         }
     </style>
 </head>
+<?php 
+$date = new DateTime();
+?>
 <body class="bg-dark p-5">
     <div>
-        <h1 class="text-white">The Evolution of Software...</h1>
-        <p class="text-white">By  Joe, Tevy, Wei, Mikkels</p>
-        <p>Testing</p>
+    <h1 class="text-white"><?php ech $date->format('Y-m-d H:i:s'); ?></h1>
+        <p class="text-white">By Stefan, Joe, Tevy, Wei, Mikkel</p>
     </div>
     <div class="container text-center evolution-container">
         <!-- Monkey -->
